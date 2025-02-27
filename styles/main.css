@@ -5,10 +5,11 @@ body {
 
 #container {
   background-color: #ffffff;
-  background-image: linear-gradient(#292a30 0.1em, transparent 0.1em),
-    linear-gradient(90deg, #292a30 0.1em, transparent 0.1em);
   background-size: 4em 4em;
   height: 100vh;
+  position: relative;
+  left: 10%;
+  top: 100px;
 }
 
 #mijnAfbeelding {
