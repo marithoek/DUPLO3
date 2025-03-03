@@ -4,61 +4,68 @@ let startX = 0,
   offsetY = 0,
   isDragging = false,
   initialX = 0,
-  initialY = 0;
+  initialY = 0,
+  currentDragged = null; // Houd bij welk element wordt versleept
 
-const afbeelding1 = document.getElementById("mijnAfbeelding1");
-const afbeelding2 = document.getElementById("mijnAfbeelding5");
+const draggables = document.querySelectorAll(
+  "#mijnAfbeelding1, #mijnAfbeelding2, #mijnAfbeelding3, #mijnAfbeelding4"
+);
+const dropZone = document.getElementById("mijnAfbeelding5");
 
 function startDrag(e) {
   e.preventDefault();
   isDragging = true;
 
-  const touch = e.touches ? e.touches[0] : e; // Check of het een touch-event is
+  currentDragged = e.target; // Het element dat versleept wordt opslaan
+  const touch = e.touches ? e.touches[0] : e;
 
-  initialX = afbeelding1.offsetLeft;
-  initialY = afbeelding1.offsetTop;
-  offsetX = touch.clientX - afbeelding1.offsetLeft;
-  offsetY = touch.clientY - afbeelding1.offsetTop;
+  initialX = currentDragged.offsetLeft;
+  initialY = currentDragged.offsetTop;
+  offsetX = touch.clientX - currentDragged.offsetLeft;
+  offsetY = touch.clientY - currentDragged.offsetTop;
 
   document.addEventListener("mousemove", moveDrag);
   document.addEventListener("touchmove", moveDrag);
 }
 
 function moveDrag(e) {
-  if (!isDragging) return;
+  if (!isDragging || !currentDragged) return;
 
   const touch = e.touches ? e.touches[0] : e;
-
   const newX = touch.clientX - offsetX;
   const newY = touch.clientY - offsetY;
 
-  afbeelding1.style.left = newX + "px";
-  afbeelding1.style.top = newY + "px";
+  currentDragged.style.left = newX + "px";
+  currentDragged.style.top = newY + "px";
 }
 
 function stopDrag() {
-  if (isDragging) {
-    if (checkOverlap(afbeelding1, afbeelding2)) {
-      console.log("Afbeeldingen overlappen!");
+  if (isDragging && currentDragged) {
+    if (checkOverlap(currentDragged, dropZone)) {
       alert(
-        "Afbeeldingen overlappen! Potion1 gaat terug naar zijn startpositie."
+        "Afbeeldingen overlappen! " +
+          currentDragged.id +
+          " gaat terug naar zijn startpositie."
       );
     }
-    afbeelding1.style.left = initialX + "px";
-    afbeelding1.style.top = initialY + "px";
+    currentDragged.style.left = initialX + "px";
+    currentDragged.style.top = initialY + "px";
   }
 
   isDragging = false;
+  currentDragged = null;
   document.removeEventListener("mousemove", moveDrag);
   document.removeEventListener("touchmove", moveDrag);
 }
 
-afbeelding1.addEventListener("mousedown", startDrag);
-afbeelding1.addEventListener("touchstart", startDrag);
+draggables.forEach((el) => {
+  el.addEventListener("mousedown", startDrag);
+  el.addEventListener("touchstart", startDrag);
+});
+
 document.addEventListener("mouseup", stopDrag);
 document.addEventListener("touchend", stopDrag);
 
-// Overlap check functie blijft hetzelfde
 function checkOverlap(img1, img2) {
   const rect1 = img1.getBoundingClientRect();
   const rect2 = img2.getBoundingClientRect();
@@ -69,4 +76,61 @@ function checkOverlap(img1, img2) {
     rect1.bottom < rect2.top ||
     rect1.top > rect2.bottom
   );
+}
+
+// RANDOM PASSWORD GENERATOR
+
+function generatePassword(
+  length,
+  includeLowercase,
+  includeUppercase,
+  includeNumbers,
+  includeSymbols
+) {
+  const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+  const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const numberChars = "0123456789";
+  const symbolChars = "!@#$%^&*()_+-=";
+
+  let allowedChars = "";
+  let password = "";
+
+  allowedChars += includeLowercase ? lowercaseChars : "";
+  allowedChars += includeUppercase ? uppercaseChars : "";
+  allowedChars += includeNumbers ? numberChars : "";
+  allowedChars += includeSymbols ? symbolChars : "";
+
+  if (length <= 0) {
+    return `(password length must be at least 1)`;
+  }
+  if (allowedChars.length === 0) {
+    return `(At least 1 set of character needs to be selected)`;
+  }
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * allowedChars.length);
+    password += allowedChars[randomIndex];
+  }
+
+  return password;
+}
+
+// Functie om het wachtwoord in de HTML te tonen na een klik op de knop
+function generateAndDisplayPassword() {
+  const passwordLength = 10;
+  const includeLowercase = true;
+  const includeUppercase = true;
+  const includeNumbers = true;
+  const includeSymbols = true;
+
+  const password = generatePassword(
+    passwordLength,
+    includeLowercase,
+    includeUppercase,
+    includeNumbers,
+    includeSymbols
+  );
+
+  // Wachtwoord in de HTML zetten
+  document.getElementById("passwordOutput").textContent = password;
 }
