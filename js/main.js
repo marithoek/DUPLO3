@@ -3,61 +3,62 @@ let startX = 0,
   offsetX = 0,
   offsetY = 0,
   isDragging = false,
-  initialX = 0, // Beginpositie X
-  initialY = 0; // Beginpositie Y
+  initialX = 0,
+  initialY = 0;
 
-const afbeelding1 = document.getElementById("mijnAfbeelding");
-const afbeelding2 = document.getElementById("mijnAfbeelding2");
+const afbeelding1 = document.getElementById("mijnAfbeelding1");
+const afbeelding2 = document.getElementById("mijnAfbeelding5");
 
-// Voeg de eventlistener toe voor de eerste afbeelding (potion1)
-afbeelding1.addEventListener("mousedown", (e) => {
-  e.preventDefault(); // Voorkomt ongewenst browsergedrag
+function startDrag(e) {
+  e.preventDefault();
   isDragging = true;
 
-  // Sla de beginpositie van de afbeelding op
+  const touch = e.touches ? e.touches[0] : e; // Check of het een touch-event is
+
   initialX = afbeelding1.offsetLeft;
   initialY = afbeelding1.offsetTop;
+  offsetX = touch.clientX - afbeelding1.offsetLeft;
+  offsetY = touch.clientY - afbeelding1.offsetTop;
 
-  // Bereken de afstand van de cursor tot de afbeelding
-  offsetX = e.clientX - afbeelding1.offsetLeft;
-  offsetY = e.clientY - afbeelding1.offsetTop;
+  document.addEventListener("mousemove", moveDrag);
+  document.addEventListener("touchmove", moveDrag);
+}
 
-  document.addEventListener("mousemove", mouseMove);
-});
+function moveDrag(e) {
+  if (!isDragging) return;
 
-document.addEventListener("mouseup", () => {
-  // Verplaats de afbeelding terug naar de beginpositie wanneer de muis wordt losgelaten
+  const touch = e.touches ? e.touches[0] : e;
+
+  const newX = touch.clientX - offsetX;
+  const newY = touch.clientY - offsetY;
+
+  afbeelding1.style.left = newX + "px";
+  afbeelding1.style.top = newY + "px";
+}
+
+function stopDrag() {
   if (isDragging) {
     if (checkOverlap(afbeelding1, afbeelding2)) {
       console.log("Afbeeldingen overlappen!");
       alert(
         "Afbeeldingen overlappen! Potion1 gaat terug naar zijn startpositie."
       );
-      afbeelding1.style.left = initialX + "px";
-      afbeelding1.style.top = initialY + "px";
-    } else {
-      afbeelding1.style.left = initialX + "px";
-      afbeelding1.style.top = initialY + "px";
     }
+    afbeelding1.style.left = initialX + "px";
+    afbeelding1.style.top = initialY + "px";
   }
 
   isDragging = false;
-  document.removeEventListener("mousemove", mouseMove);
-});
-
-// De beweging van de afbeelding
-function mouseMove(e) {
-  if (!isDragging) return;
-
-  // Bereken de nieuwe positie van de afbeelding zodat deze onder de cursor blijft
-  const newX = e.clientX - offsetX;
-  const newY = e.clientY - offsetY;
-
-  afbeelding1.style.left = newX + "px";
-  afbeelding1.style.top = newY + "px";
+  document.removeEventListener("mousemove", moveDrag);
+  document.removeEventListener("touchmove", moveDrag);
 }
 
-// Functie om te controleren of twee afbeeldingen overlappen
+afbeelding1.addEventListener("mousedown", startDrag);
+afbeelding1.addEventListener("touchstart", startDrag);
+document.addEventListener("mouseup", stopDrag);
+document.addEventListener("touchend", stopDrag);
+
+// Overlap check functie blijft hetzelfde
 function checkOverlap(img1, img2) {
   const rect1 = img1.getBoundingClientRect();
   const rect2 = img2.getBoundingClientRect();

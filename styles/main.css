@@ -21,22 +21,51 @@ body {
   z-index: 0; /* De achtergrond staat onder de andere afbeeldingen */
 }
 
-#mijnAfbeelding {
-  width: 100px;
-  height: 100px;
+#mijnAfbeelding1 {
+  width: 80px;
   border-radius: 5px;
   cursor: pointer;
   position: absolute; /* Absoluut gepositioneerd binnen de container */
-  top: 200px;
+  top: 280px;
+  left: 470px;
   z-index: 2; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
 }
 
 #mijnAfbeelding2 {
   width: 100px;
-  height: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute; /* Absoluut gepositioneerd binnen de container */
+  top: 450px;
+  left: 460px;
+  z-index: 2; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
+}
+
+#mijnAfbeelding3 {
+  width: 80px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute; /* Absoluut gepositioneerd binnen de container */
+  top: 450px;
+  left: 800px;
+  z-index: 2; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
+}
+
+#mijnAfbeelding4 {
+  width: 80px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute; /* Absoluut gepositioneerd binnen de container */
+  top: 280px;
+  left: 800px;
+  z-index: 2; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
+}
+
+#mijnAfbeelding5 {
+  width: 200px;
   border-radius: 5px;
   position: absolute;
-  top: 200px; /* Positie voor tweede afbeelding (bijvoorbeeld) */
-  left: 200px; /* Positie voor tweede afbeelding (bijvoorbeeld) */
+  top: 300px; /* Positie voor tweede afbeelding (bijvoorbeeld) */
+  left: 600px; /* Positie voor tweede afbeelding (bijvoorbeeld) */
   z-index: 1; /* Zorg ervoor dat deze boven de eerste afbeelding komt */
 }
