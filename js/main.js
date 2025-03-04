@@ -150,7 +150,8 @@ function generatePassword(
 
 // Functie om het wachtwoord in de HTML te tonen na een klik op de knop
 function generateAndDisplayPassword() {
-  const passwordLength = 10;
+  // Haal de lengte van het wachtwoord op uit het inputveld
+  const passwordLength = document.getElementById("numberInput").value || 10; // Default naar 10 als leeg is
 
   // Gebruik de actuele waarden van de wachtwoordinstellingen
   const password = generatePassword(

@@ -1,6 +1,7 @@
 @import url("afbeeldingen.css");
 @import url("button.css");
 @import url("titel.css");
+@import url("inputveld.css");
 
 body {
   padding: 0;

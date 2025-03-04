@@ -1,0 +1,25 @@
+#inputWrapper {
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  transform: translateX(-50%);
+  z-index: 2; /* Zorg ervoor dat de input boven de achtergrond komt */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Maak de achtergrond een beetje doorzichtig */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#inputWrapper label {
+  font-size: 1vw;
+}
+
+#inputWrapper input {
+  font-size: 1vw;
+  padding: 5px;
+  border-radius: 5px;
+}
