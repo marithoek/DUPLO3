@@ -1,71 +1,7 @@
+@import url("afbeeldingen.css");
+@import url("button.css");
+
 body {
   padding: 0;
   margin: 0;
-}
-
-#container {
-  position: relative; /* De container moet 'relative' zijn om absolute positie van kind-elementen mogelijk te maken */
-  height: 100vh; /* Zorg ervoor dat de container de volledige hoogte van het scherm heeft */
-}
-
-#imageWrapper {
-  position: relative; /* De container moet 'relative' zijn om absolute positie van kind-elementen mogelijk te maken */
-  height: 100vh; /* Zorg ervoor dat de container de volledige hoogte van het scherm heeft */
-}
-
-#background {
-  position: absolute; /* Achtergrond wordt absoluut gepositioneerd binnen de container */
-  top: 0;
-  left: 0;
-  height: 100%; /* !!!!!!!!!!!!!!!!!!!! Ga checken voor responsiveness, en houdt het scherm in het midden als het kan. */
-  z-index: 0; /* De achtergrond staat onder de andere afbeeldingen */
-}
-
-#mijnAfbeelding1 {
-  width: 80px;
-  border-radius: 5px;
-  cursor: pointer;
-  position: absolute; /* Absoluut gepositioneerd binnen de container */
-  top: 280px;
-  left: 470px;
-  z-index: 2; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
-}
-
-#mijnAfbeelding2 {
-  width: 100px;
-  border-radius: 5px;
-  cursor: pointer;
-  position: absolute; /* Absoluut gepositioneerd binnen de container */
-  top: 450px;
-  left: 460px;
-  z-index: 2; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
-}
-
-#mijnAfbeelding3 {
-  width: 80px;
-  border-radius: 5px;
-  cursor: pointer;
-  position: absolute; /* Absoluut gepositioneerd binnen de container */
-  top: 450px;
-  left: 800px;
-  z-index: 2; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
-}
-
-#mijnAfbeelding4 {
-  width: 80px;
-  border-radius: 5px;
-  cursor: pointer;
-  position: absolute; /* Absoluut gepositioneerd binnen de container */
-  top: 280px;
-  left: 800px;
-  z-index: 2; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
-}
-
-#mijnAfbeelding5 {
-  width: 200px;
-  border-radius: 5px;
-  position: absolute;
-  top: 300px; /* Positie voor tweede afbeelding (bijvoorbeeld) */
-  left: 600px; /* Positie voor tweede afbeelding (bijvoorbeeld) */
-  z-index: 1; /* Zorg ervoor dat deze boven de eerste afbeelding komt */
 }

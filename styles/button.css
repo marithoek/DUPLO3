@@ -1,0 +1,9 @@
+.button {
+  width: 80px;
+  background-color: blue;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute; /* Absoluut gepositioneerd binnen de container */
+  top: 200;
+  z-index: 3; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
+}

@@ -1,3 +1,5 @@
+// AFBEELDINGEN SLEPEN EN OVERLAP TRIGGEREN
+
 let startX = 0,
   startY = 0,
   offsetX = 0,
@@ -6,6 +8,12 @@ let startX = 0,
   initialX = 0,
   initialY = 0,
   currentDragged = null; // Houd bij welk element wordt versleept
+
+// Variabelen voor wachtwoordinstellingen
+let includeLowercase = true;
+let includeUppercase = true;
+let includeNumbers = true;
+let includeSymbols = true;
 
 const draggables = document.querySelectorAll(
   "#mijnAfbeelding1, #mijnAfbeelding2, #mijnAfbeelding3, #mijnAfbeelding4"
@@ -42,10 +50,20 @@ function moveDrag(e) {
 function stopDrag() {
   if (isDragging && currentDragged) {
     if (checkOverlap(currentDragged, dropZone)) {
-      alert(
-        "Afbeeldingen overlappen! " +
-          currentDragged.id +
-          " gaat terug naar zijn startpositie."
+      // Verander specifieke instellingen op basis van de afbeelding
+      if (currentDragged.id === "mijnAfbeelding1") {
+        includeLowercase = !includeLowercase; // Verander de lowercase instelling
+      } else if (currentDragged.id === "mijnAfbeelding2") {
+        includeUppercase = !includeUppercase; // Verander de uppercase instelling
+      } else if (currentDragged.id === "mijnAfbeelding3") {
+        includeNumbers = !includeNumbers; // Verander de numbers instelling
+      } else if (currentDragged.id === "mijnAfbeelding4") {
+        includeSymbols = !includeSymbols; // Verander de symbols instelling
+      }
+
+      // Optioneel: log de veranderingen voor debugging
+      console.log(
+        "Wachtwoordinstellingen veranderd door overlap met " + currentDragged.id
       );
     }
     currentDragged.style.left = initialX + "px";
@@ -118,11 +136,8 @@ function generatePassword(
 // Functie om het wachtwoord in de HTML te tonen na een klik op de knop
 function generateAndDisplayPassword() {
   const passwordLength = 10;
-  const includeLowercase = true;
-  const includeUppercase = true;
-  const includeNumbers = true;
-  const includeSymbols = true;
 
+  // Gebruik de actuele waarden van de wachtwoordinstellingen
   const password = generatePassword(
     passwordLength,
     includeLowercase,
