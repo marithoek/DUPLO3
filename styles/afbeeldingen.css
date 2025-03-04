@@ -1,6 +1,10 @@
 #container {
   position: relative; /* De container moet 'relative' zijn om absolute positie van kind-elementen mogelijk te maken */
-  height: 100vh; /* Zorg ervoor dat de container de volledige hoogte van het scherm heeft */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto; /* Voorkom vervorming */
 }
 
 #imageWrapper {
@@ -8,59 +12,75 @@
   height: 100vh; /* Zorg ervoor dat de container de volledige hoogte van het scherm heeft */
 }
 
+.image-container {
+  position: absolute;
+  text-align: center;
+  transform: translate(-50%, -50%); /* Centraal uitlijnen */
+  z-index: 3;
+}
+
+.image-text {
+  margin-top: 5px;
+  font-size: 14px;
+  color: white;
+  text-shadow: 1px 1px 3px black; /* Zichtbaarheid verbeteren op lichte achtergrond */
+}
+
 #background {
-  position: absolute; /* Achtergrond wordt absoluut gepositioneerd binnen de container */
+  position: absolute;
   top: 0;
-  left: 0;
-  height: 100%; /* !!!!!!!!!!!!!!!!!!!! Ga checken voor responsiveness, en houdt het scherm in het midden als het kan. */
-  z-index: 0; /* De achtergrond staat onder de andere afbeeldingen */
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto; /* Voorkom vervorming */
+  z-index: 0;
 }
 
 #mijnAfbeelding1 {
-  width: 80px;
+  width: 5%;
   border-radius: 5px;
   cursor: pointer;
   position: absolute; /* Absoluut gepositioneerd binnen de container */
-  top: 280px;
-  left: 470px;
-  z-index: 2; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
+  top: 50%;
+  left: 38%;
+  z-index: 3; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
 }
 
 #mijnAfbeelding2 {
-  width: 100px;
+  width: 6%;
   border-radius: 5px;
   cursor: pointer;
   position: absolute; /* Absoluut gepositioneerd binnen de container */
-  top: 450px;
-  left: 460px;
-  z-index: 2; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
+  top: 70%;
+  left: 38%;
+  z-index: 3; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
 }
 
 #mijnAfbeelding3 {
-  width: 80px;
+  width: 5%;
   border-radius: 5px;
   cursor: pointer;
   position: absolute; /* Absoluut gepositioneerd binnen de container */
-  top: 450px;
-  left: 800px;
-  z-index: 2; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
+  top: 70%;
+  left: 63%;
+  z-index: 3; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
 }
 
 #mijnAfbeelding4 {
-  width: 80px;
+  width: 5%;
   border-radius: 5px;
   cursor: pointer;
   position: absolute; /* Absoluut gepositioneerd binnen de container */
-  top: 280px;
-  left: 800px;
-  z-index: 2; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
+  top: 50%;
+  left: 63%;
+  z-index: 3; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
 }
 
 #mijnAfbeelding5 {
-  width: 200px;
+  width: 15%;
   border-radius: 5px;
   position: absolute;
-  top: 300px; /* Positie voor tweede afbeelding (bijvoorbeeld) */
-  left: 600px; /* Positie voor tweede afbeelding (bijvoorbeeld) */
+  top: 45%;
+  left: 47%;
   z-index: 1; /* Zorg ervoor dat deze boven de eerste afbeelding komt */
 }

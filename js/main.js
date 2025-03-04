@@ -1,3 +1,18 @@
+// RESIZE CONTAINER
+
+function adjustContainerWidth() {
+  const background = document.getElementById("background");
+  const container = document.getElementById("container");
+
+  if (background && container) {
+    container.style.width = background.clientWidth + "px";
+  }
+}
+
+// Pas de breedte aan bij het laden en wanneer het scherm verandert
+window.addEventListener("load", adjustContainerWidth);
+window.addEventListener("resize", adjustContainerWidth);
+
 // AFBEELDINGEN SLEPEN EN OVERLAP TRIGGEREN
 
 let startX = 0,
