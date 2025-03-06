@@ -1,14 +1,14 @@
 #passwordgendiv {
   position: absolute;
   top: 86%;
-  left: 53%;
+  left: 50%;
   height: 4%;
   transform: translateX(-50%);
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.7);
   padding: 10px;
   border-radius: 10px;
-  font-size: 1vw; /* Dynamische tekstgrootte op basis van de breedte van het scherm */
+  font-size: clamp(22px, 3vw, 26px);
 
   /* Flexbox instellingen voor verticaal en horizontaal centreren */
   display: flex;
@@ -19,7 +19,7 @@
 #imageWrapper button {
   position: absolute;
   top: 73%;
-  left: 53%;
+  left: 50%;
   transform: translateX(-50%);
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.7);
@@ -27,5 +27,5 @@
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
-  font-size: 1vw; /* Dynamische tekstgrootte op basis van de breedte van het scherm */
+  font-size: 24px;
 }

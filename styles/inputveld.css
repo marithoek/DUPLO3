@@ -1,7 +1,7 @@
 #inputWrapper {
   position: absolute;
-  top: 30%;
-  left: 45%;
+  top: 35%;
+  left: 50%;
   transform: translateX(-50%);
   z-index: 2; /* Zorg ervoor dat de input boven de achtergrond komt */
   background-color: rgba(
@@ -15,11 +15,11 @@
 }
 
 #inputWrapper label {
-  font-size: 1vw;
+  font-size: clamp(20px, 2vw, 20px);
 }
 
 #inputWrapper input {
-  font-size: 1vw;
+  font-size: clamp(16px, 2vw, 20px);
   padding: 5px;
   border-radius: 5px;
 }

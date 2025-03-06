@@ -42,7 +42,7 @@
   cursor: pointer;
   position: absolute; /* Absoluut gepositioneerd binnen de container */
   top: 50%;
-  left: 38%;
+  left: 35%;
   z-index: 3; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
 }
 
@@ -52,7 +52,7 @@
   cursor: pointer;
   position: absolute; /* Absoluut gepositioneerd binnen de container */
   top: 70%;
-  left: 38%;
+  left: 35%;
   z-index: 3; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
 }
 
@@ -62,7 +62,7 @@
   cursor: pointer;
   position: absolute; /* Absoluut gepositioneerd binnen de container */
   top: 70%;
-  left: 63%;
+  left: 60%;
   z-index: 3; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
 }
 
@@ -72,7 +72,7 @@
   cursor: pointer;
   position: absolute; /* Absoluut gepositioneerd binnen de container */
   top: 50%;
-  left: 63%;
+  left: 60%;
   z-index: 3; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
 }
 
@@ -81,6 +81,6 @@
   border-radius: 5px;
   position: absolute;
   top: 45%;
-  left: 47%;
+  left: 44%;
   z-index: 1; /* Zorg ervoor dat deze boven de eerste afbeelding komt */
 }

@@ -1,11 +1,13 @@
 #titel {
   position: fixed;
-  top: 16%; /* Zet de titel een beetje van de bovenkant van de pagina */
-  left: 52.5%;
+  top: 18%; /* Zet de titel een beetje van de bovenkant van de pagina */
+  left: 49.5%;
   transform: translateX(
     -50%
   ); /* Dit zorgt ervoor dat de titel horizontaal gecentreerd is */
-  font-size: 2vw; /* Dynamische tekstgrootte op basis van schermbreedte */
+  font-size: clamp(50px, 4vw, 60px);
   z-index: 2; /* Zorg ervoor dat de titel boven andere elementen komt */
-  color: #ffffff; /* Kleur van de titel */
+  color: #ac2fc5; /* Kleur van de titel */
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black; /* 1px rand in alle richtingen */
 }
