@@ -5,9 +5,10 @@
   transform: translateX(
     -50%
   ); /* Dit zorgt ervoor dat de titel horizontaal gecentreerd is */
-  font-size: clamp(50px, 4vw, 60px);
+  font-size: clamp(45px, 3vw, 60px);
+  font-family: "Lucida Handwriting", cursive;
   z-index: 2; /* Zorg ervoor dat de titel boven andere elementen komt */
-  color: #d997e6; /* Kleur van de titel */
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
-    1px 1px 0 black; /* 1px rand in alle richtingen */
+  color: #fceafc; /* Kleur van de titel */
+  text-shadow: -2px -2px 0 rgb(121, 11, 129), 2px -2px 0 rgb(117, 25, 136),
+    -2px 2px 0 rgb(194, 43, 171), 2px 2px 0 rgb(82, 16, 88);
 }

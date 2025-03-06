@@ -39,7 +39,7 @@
   position: absolute;
   top: 50%;
   left: 31.5%;
-  z-index: 2;
+  z-index: 1;
   visibility: hidden;
 }
 
@@ -60,7 +60,7 @@
   position: absolute;
   top: 69%;
   left: 31.5%;
-  z-index: 2;
+  z-index: 1;
   visibility: hidden;
 }
 
@@ -81,7 +81,7 @@
   position: absolute;
   top: 69%;
   left: 57%;
-  z-index: 2;
+  z-index: 1;
   visibility: hidden;
 }
 
@@ -102,7 +102,7 @@
   position: absolute;
   top: 50%;
   left: 57%;
-  z-index: 2;
+  z-index: 1;
   visibility: hidden;
 }
 
