@@ -7,7 +7,7 @@
   ); /* Dit zorgt ervoor dat de titel horizontaal gecentreerd is */
   font-size: clamp(50px, 4vw, 60px);
   z-index: 2; /* Zorg ervoor dat de titel boven andere elementen komt */
-  color: #ac2fc5; /* Kleur van de titel */
+  color: #d997e6; /* Kleur van de titel */
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
     1px 1px 0 black; /* 1px rand in alle richtingen */
 }

@@ -1,24 +1,7 @@
-#passwordgendiv {
-  position: absolute;
-  top: 86%;
-  left: 50%;
-  height: 4%;
-  transform: translateX(-50%);
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 10px;
-  border-radius: 10px;
-  font-size: clamp(22px, 3vw, 26px);
-
-  /* Flexbox instellingen voor verticaal en horizontaal centreren */
-  display: flex;
-  align-items: center; /* Verticaal centreren */
-  justify-content: center; /* Horizontaal centreren */
-}
-
+/* Genereer knop*/
 #imageWrapper button {
   position: absolute;
-  top: 73%;
+  top: 70%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -28,4 +11,23 @@
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 24px;
+}
+
+/* Wachtwoord display */
+#passwordgendiv {
+  position: absolute;
+  top: 86%;
+  left: 50%;
+  height: 4%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background-color: rgba(118, 170, 118, 0.7);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: clamp(22px, 3vw, 26px);
+
+  /* Flexbox instellingen voor verticaal en horizontaal centreren */
+  display: flex;
+  align-items: center; /* Verticaal centreren */
+  justify-content: center; /* Horizontaal centreren */
 }

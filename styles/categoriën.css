@@ -1,0 +1,39 @@
+#mijnTekst1 {
+  position: absolute;
+  top: 62%;
+  left: 35%;
+  z-index: 2;
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+#mijnTekst2 {
+  position: absolute;
+  top: 80.5%;
+  left: 35.5%;
+  z-index: 2;
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+#mijnTekst3 {
+  position: absolute;
+  top: 80.5%;
+  left: 61%;
+  z-index: 2;
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+#mijnTekst4 {
+  position: absolute;
+  top: 62%;
+  left: 60%;
+  z-index: 2;
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
