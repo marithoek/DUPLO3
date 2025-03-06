@@ -1,4 +1,4 @@
-// RESIZE CONTAINER
+// RESIZE CONTAINER NAAR BREEDTE ACHTERGROND
 
 function adjustContainerWidth() {
   const background = document.getElementById("background");

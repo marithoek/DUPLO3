@@ -32,6 +32,16 @@
   z-index: 3; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
 }
 
+#glitter1 {
+  width: 11%;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 31.5%;
+  z-index: 2;
+}
+
 #mijnAfbeelding2 {
   width: 6%;
   border-radius: 5px;
@@ -40,6 +50,16 @@
   top: 70%;
   left: 35%;
   z-index: 3; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
+}
+
+#glitter2 {
+  width: 11%;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 69%;
+  left: 31.5%;
+  z-index: 2;
 }
 
 #mijnAfbeelding3 {
@@ -52,6 +72,16 @@
   z-index: 3; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
 }
 
+#glitter3 {
+  width: 11%;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 69%;
+  left: 57%;
+  z-index: 2;
+}
+
 #mijnAfbeelding4 {
   width: 5%;
   border-radius: 5px;
@@ -60,6 +90,16 @@
   top: 50.5%;
   left: 59.9%;
   z-index: 3; /* Zorg ervoor dat deze boven de achtergrondafbeelding komt */
+}
+
+#glitter4 {
+  width: 11%;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 57%;
+  z-index: 2;
 }
 
 #mijnAfbeelding5 {
