@@ -1,4 +1,4 @@
-// RESIZE CONTAINER NAAR BREEDTE ACHTERGROND
+// ---------------------RESIZE CONTAINER NAAR BREEDTE ACHTERGROND
 
 function adjustContainerWidth() {
   const background = document.getElementById("background");
@@ -13,7 +13,7 @@ function adjustContainerWidth() {
 window.addEventListener("load", adjustContainerWidth);
 window.addEventListener("resize", adjustContainerWidth);
 
-// AFBEELDINGEN SLEPEN EN OVERLAP TRIGGEREN
+// ---------------------AFBEELDINGEN SLEPEN EN OVERLAP TRIGGEREN
 
 let startX = 0,
   startY = 0,
@@ -25,10 +25,15 @@ let startX = 0,
   currentDragged = null; // Houd bij welk element wordt versleept
 
 // Variabelen voor wachtwoordinstellingen
-let includeLowercase = true;
-let includeUppercase = true;
-let includeNumbers = true;
-let includeSymbols = true;
+let includeLowercase = false;
+let includeUppercase = false;
+let includeNumbers = false;
+let includeSymbols = false;
+
+var glitter1 = document.getElementById("glitter1");
+var glitter2 = document.getElementById("glitter2");
+var glitter3 = document.getElementById("glitter3");
+var glitter4 = document.getElementById("glitter4");
 
 const draggables = document.querySelectorAll(
   "#mijnAfbeelding1, #mijnAfbeelding2, #mijnAfbeelding3, #mijnAfbeelding4"
@@ -71,9 +76,38 @@ function stopDrag() {
       } else if (currentDragged.id === "mijnAfbeelding2") {
         includeUppercase = !includeUppercase; // Verander de uppercase instelling
       } else if (currentDragged.id === "mijnAfbeelding3") {
-        includeNumbers = !includeNumbers; // Verander de numbers instelling
+        includeNumbers = !includeNumbers; // Verander de cijfers instelling
       } else if (currentDragged.id === "mijnAfbeelding4") {
-        includeSymbols = !includeSymbols; // Verander de symbols instelling
+        includeSymbols = !includeSymbols; // Verander de symbolen instelling
+      }
+
+      // Verander de zichtbaarheid van de glitters op basis van de instellingen
+      // Verander de lowercase instelling
+      if (includeLowercase) {
+        glitter1.style.visibility = "visible";
+      } else {
+        glitter1.style.visibility = "hidden";
+      }
+
+      // Verander de uppercase instelling
+      if (includeUppercase) {
+        glitter2.style.visibility = "visible";
+      } else {
+        glitter2.style.visibility = "hidden";
+      }
+
+      // Verander de cijfers instelling
+      if (includeNumbers) {
+        glitter3.style.visibility = "visible";
+      } else {
+        glitter3.style.visibility = "hidden";
+      }
+
+      // Verander de symbolen instelling
+      if (includeSymbols) {
+        glitter4.style.visibility = "visible";
+      } else {
+        glitter4.style.visibility = "hidden";
       }
 
       // Optioneel: log de veranderingen voor debugging
@@ -110,8 +144,9 @@ function checkOverlap(img1, img2) {
     rect1.top > rect2.bottom
   );
 }
+// ---------------------INDICATIE VAN AANWEZIGHEID CATEGORIE DMV GLITTER
 
-// RANDOM PASSWORD GENERATOR
+// ---------------------RANDOM PASSWORD GENERATOR
 
 function generatePassword(
   length,

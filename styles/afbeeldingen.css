@@ -40,6 +40,7 @@
   top: 50%;
   left: 31.5%;
   z-index: 2;
+  visibility: hidden;
 }
 
 #mijnAfbeelding2 {
@@ -60,6 +61,7 @@
   top: 69%;
   left: 31.5%;
   z-index: 2;
+  visibility: hidden;
 }
 
 #mijnAfbeelding3 {
@@ -80,6 +82,7 @@
   top: 69%;
   left: 57%;
   z-index: 2;
+  visibility: hidden;
 }
 
 #mijnAfbeelding4 {
@@ -100,6 +103,7 @@
   top: 50%;
   left: 57%;
   z-index: 2;
+  visibility: hidden;
 }
 
 #mijnAfbeelding5 {
