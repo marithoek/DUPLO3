@@ -10,18 +10,18 @@
     243,
     0.601
   ); /* Maak de achtergrond een beetje doorzichtig */
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
 }
 
 #inputWrapper label {
-  font-size: clamp(20px, 2vw, 20px);
+  font-size: clamp(8px, 0.5vw, 14px);
   font-family: "Lucida Handwriting", cursive;
   color: rgb(149, 36, 151);
 }
 
 #inputWrapper input {
-  font-size: clamp(16px, 2vw, 20px);
+  font-size: clamp(8px, 0.5vw, 14px);
   padding: 5px;
   border-radius: 5px;
   border: rgb(91, 26, 117) 1px solid;
