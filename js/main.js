@@ -199,4 +199,48 @@ function generateAndDisplayPassword() {
 
   // Wachtwoord in de HTML zetten
   document.getElementById("passwordOutput").textContent = password;
+
+  // Roep de functie aan om de sterkte te controleren
+  checkPasswordStrength(password);
+
+  // Maak de sterkte-div zichtbaar
+  document.getElementById("passwordstrengthdiv").style.visibility = "visible";
+}
+
+// PASSWORD STRENGTH
+
+function checkPasswordStrength(password) {
+  let score = 0;
+  let maxScore = 6; // Max score als alle criteria behaald worden
+
+  if (password.length >= 8) score++; // Minimaal 8 tekens
+  if (password.length >= 12) score++; // Minimaal 12 tekens
+  if (/[a-z]/.test(password)) score++; // Kleine letters
+  if (/[A-Z]/.test(password)) score++; // Hoofdletters
+  if (/[0-9]/.test(password)) score++; // Cijfers
+  if (/[^a-zA-Z0-9]/.test(password)) score++; // Speciale tekens
+
+  // Bereken percentage
+  let percentage = Math.round((score / maxScore) * 100);
+
+  let strengthText = "";
+  let strengthClass = "";
+
+  if (percentage < 40) {
+    strengthText = "Zwak";
+    strengthClass = "weak";
+  } else if (percentage < 70) {
+    strengthText = "Gemiddeld";
+    strengthClass = "medium";
+  } else {
+    strengthText = "Sterk";
+    strengthClass = "strong";
+  }
+
+  // Update de UI
+  const strengthElement = document.getElementById("passwordStrength");
+  strengthElement.textContent = strengthText;
+  strengthElement.className = strengthClass; // Pas de kleur aan op basis van sterkte
+
+  document.getElementById("passwordPercentage").textContent = percentage; // Toon percentage
 }

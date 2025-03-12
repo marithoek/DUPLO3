@@ -1,33 +1,18 @@
-/* Genereer knop*/
-#imageWrapper button {
-  position: absolute;
-  top: 69%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 8px;
-  font-family: "Lucida Handwriting", cursive;
-}
-
 /* Wachtwoord display */
-#passwordgendiv {
+#passwordstrengthdiv {
   position: absolute;
-  top: 86%;
+  top: 79%;
   left: 50%;
   height: 4%;
   transform: translateX(-50%);
   z-index: 1;
-  background-color: rgba(235, 194, 231, 0.601);
-  padding: 5px;
+  background-color: rgba(194, 232, 235, 0.601);
+  padding: 3px;
   border-radius: 10px;
   font-size: clamp(8px, 0.5vw, 14px);
   font-family: "Lucida Console";
   color: rgb(149, 36, 151);
+  visibility: hidden;
 
   /* Flexbox instellingen voor verticaal en horizontaal centreren */
   display: flex;
