@@ -5,7 +5,7 @@
   transform: translateX(
     -50%
   ); /* Dit zorgt ervoor dat de titel horizontaal gecentreerd is */
-  font-size: clamp(20px, 2vw, 40px);
+  font-size: 20px;
   font-family: "Lucida Handwriting", cursive;
   z-index: 2; /* Zorg ervoor dat de titel boven andere elementen komt */
   color: #fceafc; /* Kleur van de titel */
